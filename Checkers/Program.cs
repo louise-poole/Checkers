@@ -50,4 +50,90 @@ namespace Checkers
 
     public class IllegalMoveException : ApplicationException { }
 
+    public class Board : IBoard
+    {
+        public void Move(IPiece piece, int destination)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IPiece Occupant(int position)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<int> Pieces(Color color)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Promote(IPiece piece)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveCapturedPieces()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class Piece : IPiece
+    {
+        public Status Status => throw new NotImplementedException();
+
+        public Color Color => throw new NotImplementedException();
+
+        public int Position => throw new NotImplementedException();
+
+        public virtual IEnumerable<int> CapturingMoves(IBoard board)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void Move(int destination)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual IEnumerable<int> NormalMoves(IBoard board)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class Player : IPlayer
+    {
+        public string Name => throw new NotImplementedException();
+
+        public (int, int) GetMove()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class Referee : IReferee
+    {
+        public bool IsDraw()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Play()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IPlayer Winner()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class King : Piece
+    {
+
+    }
+
+
 }
